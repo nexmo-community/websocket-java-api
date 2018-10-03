@@ -12,6 +12,8 @@ plugins {
 
     // Apply the application plugin to add support for building an application
     id 'application'
+
+    id "org.gretty" version "2.2.0"
 }
 
 // Define the main class for the application
@@ -20,6 +22,8 @@ mainClassName = 'App'
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
+
+    compile 'javax.websocket:javax.websocket-api:1.1'
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
@@ -30,4 +34,9 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+}
+
+gretty {
+    servletContainer = 'tomcat8'
+    contextPath = '/'
 }
