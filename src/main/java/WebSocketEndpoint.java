@@ -7,14 +7,14 @@ import java.nio.ByteBuffer;
 @ServerEndpoint("/socket")
 public class WebSocketEndpoint {
     @OnMessage
-    public void handleTextMessage(Session session, String message) throws IOException {
+    public String handleTextMessage(Session session, String message) throws IOException {
         System.out.println("New Text Message Received");
-        session.getAsyncRemote().sendText(message);
+        return message;
     }
 
     @OnMessage(maxMessageSize = 1024000)
-    public void handleBinaryMessage(Session session, byte[] buffer) throws IOException {
+    public byte[] handleBinaryMessage(Session session, byte[] buffer) throws IOException {
         System.out.println("New Binary Message Received");
-        session.getAsyncRemote().sendBinary(ByteBuffer.wrap(buffer));
+        return buffer;
     }
 }
