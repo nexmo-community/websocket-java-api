@@ -7,7 +7,7 @@ Server is set to listen on ws://localhost:8080/socket and will respond to both b
 
 ## Running Instructions
 
-Clone the project and run `gradle appRun` to start it.
+Clone the project and run `gradle appRun` in the project folder to start it.
 
 Open `http://localhost:8080/` in a web browser.
 
