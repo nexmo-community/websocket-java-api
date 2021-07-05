@@ -1,3 +1,5 @@
+package websocket.java.api;
+
 import javax.websocket.OnMessage;
 import javax.websocket.server.ServerEndpoint;
 
